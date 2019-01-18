@@ -1,0 +1,8 @@
+# convertir un .xml a .json
+# para agregar a una base de datos
+%.json: %.xml
+	mkdir -p `dirname $target`
+	xml2json -o /dev/fd/1 $prereq \
+	| python -m json.tool \
+	> $target".build" \
+	&& mv $target".build" $target

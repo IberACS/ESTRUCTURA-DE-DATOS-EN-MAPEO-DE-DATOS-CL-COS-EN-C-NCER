@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Busca todas las carpetas en .xml, y las cambia a .json
+# Lo más recomendable para que funcione bien la aplicación que tenemos abrir
+# el targets y el index. 
+
+find -name '*.xml' \
+| sed -r \
+	-e 's#\.xml#.json#'
